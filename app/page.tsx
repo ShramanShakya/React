@@ -1,11 +1,12 @@
 import React from 'react'
+import { Container } from 'lucide-react'
 
 const page = () => {
   return (
-    <div className='p-4'>
+    <Container className="bg-[var(--color-shop_light_pink)]">
       <h2 className="text-xl font-semibold">Welcome to the E-commerce App</h2>
-    </div>
-  )
-}
+    </Container>
+  );
+};
 
 export default page

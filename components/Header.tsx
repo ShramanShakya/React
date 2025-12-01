@@ -1,11 +1,12 @@
 import React from 'react'
 import Container from './Container'
+import Logo from './Logo'
 
 const Header = () => {
   return (
-    <header>
-      <Container className="bg-red-300"> 
-        Header
+    <header className="bg-white py-5"> 
+      <Container>
+        <Logo/>
       </Container>
     </header>
   )
