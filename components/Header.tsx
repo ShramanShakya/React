@@ -5,17 +5,23 @@ import HeaderMenu from './HeaderMenu'
 import SearchBar from './SearchBar'
 import Carticon from './Carticon'
 import FavouriteButton from './FavouriteButton'
+import SignIn from './SignIn'
+import MobileMenu from './MobileMenu'
 
 const Header = () => {
   return (
     <header className="bg-white py-5 border-b border-b-black/20"> 
       <Container className="flex items-center justify-between">
-        <Logo/>
+        <div className='flex items-center gap-5 md:gap-6 w-auto md:w-1/3'>
+          <MobileMenu/>
+          <Logo/>
+        </div>
         <HeaderMenu/>
       <div className ="w-auto md:w-1/3 flex items-center justify-end gap-5">
         <SearchBar/>
         <Carticon/>
         <FavouriteButton/>
+        <SignIn/>
       </div>
       </Container>
     </header>
