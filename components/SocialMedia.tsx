@@ -45,11 +45,12 @@ const SocialMedia = ({className, iconClassName, tooltipClassName}: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     href={item?.href}
-                    className={cn("p-2 border rounded-full")}
+                    className={cn("p-2 border rounded-full hover:text-white hover:text-[var(--color-shop_light_purple)] hoverEffect", iconClassName)}
                 >
                     {item?.icon}
                 </Link>
             </TooltipTrigger>
+            <TooltipContent>{item?.title}</TooltipContent>
           </Tooltip>
         ))}
         </div>
