@@ -5,7 +5,7 @@ import { Sign } from 'crypto'
 const SignIn = () => {
   return (
     <SignInButton >
-    <button className="text-M font-semibold hover:text-darkColor hover:text-[var(--color-shop_light_purple)]">
+    <button className="text-M font-semibold hover:text-darkColor hover:text-(--color-shop_light_purple)">
         Login
     </button>
     </SignInButton>
