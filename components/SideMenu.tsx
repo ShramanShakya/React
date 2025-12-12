@@ -23,13 +23,13 @@ const SideMenu : FC<SideBarProps>=({isOpen, onClose}) => {
             <div className="flex items-center justify-between gap-5 pb-5">
                 <Logo className="text-white" spanDesignN="group-hover:text-white"/> 
                 <button onClick={onClose}
-                className="hover:text-[var(--color-shop_light_purple)] absolute top-5 right-5"> 
+                className="hover:text-(--color-shop_light_purple) absolute top-5 right-5"> 
                     <X/>
                 </button>
             </div>
             <div className="flex flex-col space-y-4 font-semibold tracking-wide pb-5">
                 {headerData?.map((item)=>(
-                    <Link href={item?.href} key={item?.title} className={`hover:text-[var(--color-shop_light_purple)] hoverEffect ${pathname === item?.href ? "text-[var(--color-shop_light_purple)]" : ""}`}>
+                    <Link href={item?.href} key={item?.title} className={`hover:text-(--color-shop_light_purple) hoverEffect ${pathname === item?.href ? "text-(--color-shop_light_purple)" : ""}`}>
                         {item?.title}
                     </Link>
                 ))}
