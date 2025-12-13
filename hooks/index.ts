@@ -5,8 +5,8 @@ import { useEffect, useRef } from 'react';
         const ref = useRef<T>(null);
 
         useEffect(() => {
-            const handleClickedOutside = (event: MouseEvent) => {
-                if (ref.current && !ref.current.contains(event.target as Node)) {
+            const handleClickedOutside = (e: MouseEvent) => {
+                if (ref.current && !ref.current.contains(e.target as Node)) {
                     callback();
                 }
             };

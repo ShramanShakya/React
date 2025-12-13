@@ -1,9 +1,13 @@
 import React from 'react'
-import { Container } from 'lucide-react'
+import Container from '@/components/Container'
+import HomeBanner from '@/components/HomeBanner'
 
 const page = () => {
   return (
-    <div></div>
+    <Container className="bg-shop_light_purple">
+      <HomeBanner />
+    </Container>
+
   );
 };
 
