@@ -1,11 +1,12 @@
 import React from 'react'
 import Container from './Container'
+import SecondaryFooter from './SecondaryFooter'
 
 const Footer = () => {
   return (
-    <footer> 
+    <footer className="mb-40"> 
       <Container>
-        Footer
+        <SecondaryFooter/>
       </Container>
     </footer>
   )
