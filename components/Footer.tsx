@@ -48,11 +48,11 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <span className="font-semibold text-gray-900 font-sans">Contact Us</span>
+            <span className="font-semibold text-gray-900 font-sans">Newsletter</span>
             <p className="font-semobold text-gray-900">Subscribe to our newsletter to receive updates and exclusive offers</p>
-            <form>
-              <Input placeholder="Enter your email"/>
-              <Button>Subscribe</Button>
+            <form className="space-y-3">
+              <Input placeholder="Enter your email" type="email" required/>
+              <Button className="w-full">Subscribe</Button>
             </form>
           </div>
         </div>
