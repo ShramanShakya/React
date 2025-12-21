@@ -33,7 +33,7 @@ const data: ContactItemData[]=[
     title:"Email Us",
     subtitle:"Shopman@gmail.com",
     icon:(
-      <Mail className = "h-6 w-6 text-black-600 group-hover:text-black transition-colors"></Mail>
+      <Mail className = "h-6 w-6 text-gray-600 group-hover:text-black transition-colors"></Mail>
     )
   }
 ]
@@ -42,10 +42,10 @@ const secondaryFooter = () => {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 border-b">
       {data?.map((item, index)=>(
-        <div key={index} className="flex items-center gap-3 group hover:bg-black p-4 transition-colors">
+        <div key={index} className="flex items-center gap-3 group hover:bg-gray-100 p-4 transition-colors">
           {item?.icon}
           <div>
-            <h3 className = "font-semibold text-gray-90 group-hover:text-black">{item?.title}</h3>
+            <h3 className = "font-semibold text-gray-900 group-hover:text-black">{item?.title}</h3>
             <p>{item?.subtitle}</p>
           </div>
         </div>

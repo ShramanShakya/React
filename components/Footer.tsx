@@ -3,6 +3,10 @@ import Container from './Container'
 import SecondaryFooter from './SecondaryFooter'
 import Logo from './Logo'
 import SocialMedia from './SocialMedia'
+import Link from 'next/link'
+import { categoriesData, quickLinkData } from './Constants/Data'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
 
 const Footer = () => {
   return (
@@ -18,6 +22,38 @@ const Footer = () => {
             <SocialMedia className="text-darkColor/60" iconClassName="border-darkColor/60 hover:border-(--color-shop_light_purple) hover:text-(--color-shop_dark_purple)"
             tooltipClassName="bg-darkColor text-white"
             />
+          </div>
+          <div>
+            <span className="font-semibold text-gray-900 font-sans">Quick Links</span>
+            <ul className="space-y-3 mt-4">
+              {quickLinkData?.map((item)=>(
+                <li key={item?.title}>
+                  <Link href={item?.href} className="hover:text-(--color-shop_light_purple) transition-colors duration-200">
+                  {item?.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-gray-900 font-sans">Categories</span>
+            <ul className="space-y-3 mt-4">
+              {categoriesData?.map((item)=>(
+                <li key={item?.title}>
+                  <Link href={`/category/${item?.href}`} className="hover:text-(--color-shop_light_purple) transition-colors duration-200">
+                  {item?.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-gray-900 font-sans">Contact Us</span>
+            <p className="font-semobold text-gray-900">Subscribe to our newsletter to receive updates and exclusive offers</p>
+            <form>
+              <Input placeholder="Enter your email"/>
+              <Button>Subscribe</Button>
+            </form>
           </div>
         </div>
       </Container>
