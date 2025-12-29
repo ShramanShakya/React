@@ -40,7 +40,7 @@ useEffect(() =>{
   return (
     <div>
       <HomeTabBar selectedTab ={selectedTab} onTabSelect = {setselectedTab}/>
-      {!loading? (
+      {loading? (
         <div className="flex flex-col items-center justify-center py-10 min-h-80 gap-4 bg-gray-100 w-full mt-10">
         <div className="space-x-2 flex items-center text-blue-600">
           <Loader2 className="w-5 h-6 animate-spin"/>
