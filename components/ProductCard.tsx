@@ -2,7 +2,9 @@ import React from 'react'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import { Product } from '@/sanity.types'
-import { Flame, Link } from 'lucide-react'
+import { Flame,} from 'lucide-react'
+import Link from 'next/link'
+import AddToWishlistButton from './AddToWishlistButton'
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
@@ -13,15 +15,16 @@ const ProductCard = ({ product }: { product: Product }) => {
             alt="Product Image" loading="lazy" width={700} height={700}
           />
         )}
+        <AddToWishlistButton product={product}/>
       {product?.status === "sale" && (
         <p className="absolute top-2 left-2 z-10 text-xs border border-black/50 px-2 rounded-full 
-        hoverEffect group-hover:border-(--color-shop_dark_purple) group-hover:text-(--color-shop_light_purple)">Sale!</p>
+        group-hover:border-(--color-shop_dark_purple) group-hover:text-(--color-shop_light_purple) hoverEffect">Sale!</p>
       )}
-      {product?.status === "sale" && (
+      {product?.status === "new" && (
         <p className="absolute top-2 left-2 z-10 text-xs border border-black/50 px-2 rounded-full 
         hoverEffect group-hover:border-(--color-shop_dark_purple) group-hover:text-(--color-shop_light_purple)">New Arrival!</p>
       )}
-      {product?.status === "hot" && <Link 
+      {product?.status === "hot" && <Link
         href={"/deal"}
         className="absolute top-2 left-2 z-10 border border-orange/50 p-1 rounded-full 
          group-hover:border-(--color-shop_orange) group-hover:text-(--color-shop_orange) hoverEffect"
