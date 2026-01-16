@@ -12,7 +12,12 @@ const ProductCard = ({ product }: { product: Product }) => {
       <div className="relative group overflow-hidden bg-(--color-shop_light_bg)">
         {product?.images && (
           <Image src={urlFor(product?.images[0]).url()}
-            alt="Product Image" loading="lazy" width={700} height={700}
+            alt="Product Image" 
+            loading="lazy" 
+            width={700} 
+            height={700}
+            className={`w-full h-64 object-contain overflow-hidden transition-transform bg-shop_lighter_bg hoverEffect
+            ${product?.stock !==0 ? "group-hover:scale-105" : "opacity-50"}`}
           />
         )}
         <AddToWishlistButton product={product}/>
@@ -37,7 +42,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         </Link>}
       </div>
       <div className="p-3">
-        Product details
+        {product?.categories && <p>{product?.categories?.map((cat)=>cat).join(", ")}</p>}
       </div>
     </div>
   );
