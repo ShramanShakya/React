@@ -2,7 +2,7 @@ import React from 'react'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import { Product } from '@/sanity.types'
-import { Flame,} from 'lucide-react'
+import { Flame, StarIcon,} from 'lucide-react'
 import Link from 'next/link'
 import AddToWishlistButton from './AddToWishlistButton'
 
@@ -41,8 +41,33 @@ const ProductCard = ({ product }: { product: Product }) => {
         />
         </Link>}
       </div>
-      <div className="p-3">
-        {product?.categories && <p>{product?.categories?.map((cat)=>cat).join(", ")}</p>}
+      <div className="p-3 flex flex-col gap-2">
+        {product?.categories && (
+          <p className="uppercase line-clamp-1 text-xs text-text-(--color_light_text)">
+            {product?.categories?.map((cat)=>cat).join(", ")}
+          </p>)}
+          <title className="text-sm line-clamp-1">{product?.name}</title>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center">
+              {[...Array(5)].map((_,index)=>(
+                <StarIcon 
+                size={14}
+                key={index} 
+                className={index < 4 ? "text-(--color-shop_light_purple)" : "text-(--color-shop_lighter_text)"}
+                fill = {index < 4 ? "#a766f2" : "#bc94e9"}
+                />
+              ))}
+            </div>
+            <p className="text-xd tracking-wide">Reviews</p>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <p className="font-medium">
+              In Stock
+            </p>
+            <p className="Text-(--color-shop_light_purple) font-semibold">
+              {(product?.stock as number) > 0 ?product?.stock : "unavailable"}
+            </p>
+          </div>
       </div>
     </div>
   );
