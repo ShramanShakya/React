@@ -16,9 +16,11 @@
   --color-lightColor: #52525b;
   --color-lightOrange: #fca99b;
   --color-shop_light_purple: #a766f2;
+  --color-shop_lighter_purple: #bc94e9;
   --color-shop_dark_purple: #4812a0;
   --color-shop_lighter_bg: #f1f3f8;
-  --color-shop_light_text: #686e7d
+  --color-shop_light_text: #686e7d;
+  --color-shop_lighter_text: #ababab;
 }
 
 

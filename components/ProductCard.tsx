@@ -5,6 +5,8 @@ import { Product } from '@/sanity.types'
 import { Flame, StarIcon,} from 'lucide-react'
 import Link from 'next/link'
 import AddToWishlistButton from './AddToWishlistButton'
+import PriceView from './PriceView'
+import AddToCartButton from './AddToCartButton'
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
@@ -64,10 +66,17 @@ const ProductCard = ({ product }: { product: Product }) => {
             <p className="font-medium">
               In Stock
             </p>
-            <p className="Text-(--color-shop_light_purple) font-semibold">
+            <p className={` ${product?.stock === 0 ? "text-red-600" : "Text-(--color-shop_light_purple) font-semibold"}`}>
               {(product?.stock as number) > 0 ?product?.stock : "unavailable"}
             </p>
           </div>
+          <PriceView
+          price={product?.price}
+          discount={product?.discount}
+          className="text-sm"
+          />
+
+          <AddToCartButton/>
       </div>
     </div>
   );
