@@ -76,7 +76,7 @@ const ProductCard = ({ product }: { product: Product }) => {
           className="text-sm"
           />
 
-          <AddToCartButton/>
+          <AddToCartButton product ={product} className="w-36 rounded-full"/>
       </div>
     </div>
   );
