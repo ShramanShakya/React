@@ -16,7 +16,7 @@ const Header = async() => {
   console.log(user, "user");
 
   return (
-    <header className="bg-white py-5"> 
+    <header className="bg-white py-5 sticky top-0 z-50 backdrop:blur-md"> 
       <Container className="flex items-center justify-between">
         <div className='flex items-center gap-2.5 md:gap-3 justify-start w-auto md:w-1/3 text-(--color-lightColor)'>
           <MobileMenu/>
