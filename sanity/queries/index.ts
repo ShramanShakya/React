@@ -1,9 +1,9 @@
 import { sanityFetch } from "../lib/live";
 
-const getCategoriesQuery = async (quantity?: number) => {
+const getCategories = async (quantity?: number) => {
     try {
         const query = quantity
-            ? `*[_type == "product" && quantity > 0]{
+            ? `*[_type == "category" | order(name asc) [0...$quantity]]{
             ...,
             "productCount": count(*[_type == "product" && references(^._id)])
             }`
@@ -11,11 +11,11 @@ const getCategoriesQuery = async (quantity?: number) => {
                 ...,
                 "productCount": count(*[_type == "product" && references(^._id)])
             }`;
-            const { data } = await sanityFetch({
-                query,
-                params: quantity ?  { quantity } : {},
-            });
-
+    const { data } = await sanityFetch({
+        query,
+        params: quantity ?  { quantity } : {},
+    });
+    return data;
     }
     catch(error){
         console.log(error, "error in query",error);
@@ -23,3 +23,4 @@ const getCategoriesQuery = async (quantity?: number) => {
     }
 
 }
+export { getCategories };
