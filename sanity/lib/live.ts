@@ -10,7 +10,7 @@ if (!token) {
   console.warn("SANITY_API_READ_TOKEN is not set. Live content will not work.");
 }
 
-export const {sanityFetch, SanityLive} = defineLive({
+export const { sanityFetch, SanityLive } = defineLive({
   client,
   serverToken: token,
   browserToken: token,

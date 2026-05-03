@@ -7,7 +7,6 @@ import { getCategories } from '@/sanity/queries';
 
 const page = async() => {
   const categories = await getCategories(6);
-  console.log(categories);
   
   return (
     <Container className="bg-shop_light_purple">
@@ -18,5 +17,5 @@ const page = async() => {
 
   );
 };
-
+ 
 export default page
