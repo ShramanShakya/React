@@ -9,10 +9,10 @@ const HomeCategories = ({ categories }: { categories: Category[] }) => {
   return (
     <div className="bg-white border border-shop_light_purple my-10 md:my-20 p-5 lg:p-7 rounded-md">
       <Title className="border-b pb-3">Popular Category</Title>
-      <div>
+      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {categories?.map((category) => (
-          <div key={category?._id}>{category?.image && (
-            <div className="overflow-hidden border border-shop_light_purple hover:border-shop_dark_purple hoverEffect w-20 h-20 p-1">
+          <div key={category?._id } className="bg-shop_light_purple p-5 flex item-center gap-3 group">{category?.image && (
+            <div className="overflow-hidden border group-hover:border-(--color-shop_dark_purple) hoverEffect w-20 h-20 p-1">
               <Link href={`/category/${category?.slug?.current}`}>
                 <Image
                   src={urlFor(category?.image).url()}
@@ -24,6 +24,12 @@ const HomeCategories = ({ categories }: { categories: Category[] }) => {
               </Link>
             </div>
           )}
+            <div className="space-y-1">
+              <h3 className="font-semibold">{category?.title}</h3>
+              <p className="text-sm text-black">
+                <span className="font-bold text-(--color-shop_light_purple)">{`(${category?.productCount })`}</span>{" "}items Available
+              </p>
+            </div>
           </div>
         ))}
       </div>
